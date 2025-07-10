@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator - AllToolsOnline</title>
+
+    <!-- Embedded Tailwind CSS (for offline use on GitHub Pages) -->
+    <style>
+        /*!
+         * Tailwind CSS v3.4.3 | MIT License | https://tailwindcss.com
+         */
+        *, ::before, ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+        ::before, ::after {
+            --tw-content: '';
+        }
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+        }
+        body {
+            margin: 0;
+            line-height: inherit;
+        }
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px;
+        }
+        abbr:where([title]) {
+            text-decoration: underline dotted;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        b, strong {
+            font-weight: bolder;
+        }
+        code, kbd, samp, pre {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 1em;
+        }
+        small {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        sup {
+            top: -0.5em;
+        }
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse;
+        }
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+        button, select {
+            text-transform: none;
+        }
+        button, [type='button'], [type='reset'], [type='submit'] {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+        }
+        :-moz-focusring {
+            outline: auto;
+        }
+        :-moz-ui-invalid {
+            box-shadow: none;
+        }
+        progress {
+            vertical-align: baseline;
+        }
+        ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+            height: auto;
+        }
+        [type='search'] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+        ::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+        summary {
+            display: list-item;
+        }
+        blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+            margin: 0;
+        }
+        fieldset {
+            margin: 0;
+            padding: 0;
+        }
+        legend {
+            padding: 0;
+        }
+        ol, ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input::placeholder, textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af;
+        }
+        button, [role="button"] {
+            cursor: pointer;
+        }
+        :disabled {
+            cursor: default;
+        }
+        img, svg, video, canvas, audio, iframe, embed, object {
+            display: block;
+            vertical-align: middle;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        [hidden] {
+            display: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px;
+            }
+        }
+        .flex {
+            display: flex;
+        }
+        .hidden {
+            display: none;
+        }
+        .block {
+            display: block;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .flex-grow {
+            flex-grow: 1;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+        }
+        .relative {
+            position: relative;
+        }
+        .sticky {
+            position: sticky;
+        }
+        .top-0 {
+            top: 0px;
+        }
+        .z-50 {
+            z-index: 50;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .-mt-10 {
+            margin-top: -2.5rem;
+        }
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .p-2\.5 {
+            padding: 0.625rem; /* Equivalent to 10px */
+        }
+        .p-3 {
+            padding: 0.75rem;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .p-6 {
+            padding: 1.5rem;
+        }
+        .p-8 {
+            padding: 2rem;
+        }
+        .w-5 {
+            width: 1.25rem; /* 20px */
+        }
+        .w-6 {
+            width: 1.5rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .h-5 {
+            height: 1.25rem; /* 20px */
+        }
+        .h-6 {
+            height: 1.5rem;
+        }
+        .h-auto {
+            height: auto;
+        }
+        .min-h-screen {
+            min-height: 100vh;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1;
+        }
+        .font-bold {
+            font-weight: 700;
+        }
+        .font-extrabold {
+            font-weight: 800;
+        }
+        .font-medium {
+            font-weight: 500;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .leading-tight {
+            line-height: 1.25;
+        }
+        .text-white {
+            color: #fff;
+        }
+        .text-gray-50 {
+            color: #f9fafb;
+        }
+        .text-gray-300 {
+            color: #d1d5db;
+        }
+        .text-gray-400 {
+            color: #9ca3af;
+        }
+        .text-gray-600 {
+            color: #4b5563;
+        }
+        .text-gray-700 {
+            color: #374151;
+        }
+        .text-gray-800 {
+            color: #1f2937;
+        }
+        .text-gray-900 {
+            color: #111827;
+        }
+        .text-blue-50 {
+            color: #eff6ff;
+        }
+        .text-blue-100 {
+            color: #dbeafe;
+        }
+        .text-blue-300 {
+            color: #93c5fd;
+        }
+        .text-blue-600 {
+            color: #2563eb;
+        }
+        .text-blue-700 {
+            color: #1d4ed8;
+        }
+        .text-green-100 {
+            color: #dcfce7;
+        }
+        .text-green-600 {
+            color: #16a34a;
+        }
+        .text-green-700 {
+            color: #15803d;
+        }
+        .text-purple-100 {
+            color: #f3e8ff;
+        }
+        .text-purple-600 {
+            color: #9333ea;
+        }
+        .text-red-100 {
+            color: #fee2e2;
+        }
+        .text-red-600 {
+            color: #dc2626;
+        }
+        .text-red-700 {
+            color: #b91c1c;
+        }
+        .text-yellow-300 {
+            color: #fde047;
+        }
+        .text-yellow-600 {
+            color: #eab308;
+        }
+        .text-indigo-600 {
+            color: #4f46e5;
+        }
+        .bg-white {
+            background-color: #fff;
+        }
+        .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        .bg-gray-100 {
+            background-color: #f3f4f6;
+        }
+        .bg-gray-800 {
+            background-color: #1f2937;
+        }
+        .bg-blue-50 {
+            background-color: #eff6ff;
+        }
+        .bg-blue-100 {
+            background-color: #dbeafe;
+        }
+        .bg-blue-600 {
+            background-color: #2563eb;
+        }
+        .bg-blue-700 {
+            background-color: #1d4ed8;
+        }
+        .bg-green-100 {
+            background-color: #dcfce7;
+        }
+        .bg-green-600 {
+            color: #16a34a;
+        }
+        .bg-green-700 {
+            color: #15803d;
+        }
+        .bg-purple-100 {
+            background-color: #f3e8ff;
+        }
+        .bg-purple-600 {
+            color: #9333ea;
+        }
+        .bg-red-100 {
+            background-color: #fee2e2;
+        }
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+        .from-blue-500 {
+            --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
+            --tw-gradient-to: #3b82f600 var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .to-indigo-600 {
+            --tw-gradient-to: #4f46e5 var(--tw-gradient-to-position);
+        }
+        .rounded-full {
+            border-radius: 9999px;
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+        .rounded-b-lg {
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        .rounded-t-lg {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+        .rounded-r-lg {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        .rounded-l-lg {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        .border {
+            border-width: 1px;
+        }
+        .border-t {
+            border-top-width: 1px;
+        }
+        .border-r {
+            border-right-width: 1px;
+        }
+        .border-gray-100 {
+            border-color: #f3f4f6;
+        }
+        .border-gray-200 {
+            border-color: #e5e7eb;
+        }
+        .border-gray-300 {
+            border-color: #d1d5db;
+        }
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-inner {
+            --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+        .focus-within\:ring-2:focus-within {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+        .focus\:ring-2:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+        .focus\:ring-blue-300:focus {
+            --tw-ring-color: #93c5fd;
+        }
+        .focus\:ring-blue-400:focus {
+            --tw-ring-color: #60a5fa;
+        }
+        .resize-y {
+            resize: vertical;
+        }
+        .opacity-90 {
+            opacity: 0.9;
+        }
+        .transition {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .duration-200 {
+            transition-duration: 200ms;
+        }
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+        .ease-in-out {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover\:text-blue-600:hover {
+            color: #2563eb;
+        }
+        .hover\:text-blue-700:hover {
+            color: #1d4ed8;
+        }
+        .hover\:bg-blue-50:hover {
+            background-color: #eff6ff;
+        }
+        .hover\:bg-blue-700:hover {
+            background-color: #1d4ed8;
+        }
+        .hover\:bg-gray-100:hover {
+            background-color: #f3f4f6;
+        }
+        .hover\:bg-green-700:hover {
+            color: #15803d;
+        }
+        .hover\:shadow-lg:hover {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .hover\:shadow-xl:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .hover\:-translate-y-1:hover {
+            --tw-translate-y: -0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+        .hover\:scale-105:hover {
+            --tw-scale-x: 1.05;
+            --tw-scale-y: 1.05;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+        @media (min-width: 768px) {
+            .md\:px-10 {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+            .md\:flex {
+                display: flex;
+            }
+            .md\:hidden {
+                display: none;
+            }
+            .md\:text-left {
+                text-align: left;
+            }
+            .md\:text-lg {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+            .md\:text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1;
+            }
+            .md\:flex-row {
+                flex-direction: row;
+            }
+            .md\:mb-0 {
+                margin-bottom: 0px;
+            }
+        }
+        @media (min-width: 640px) {
+            .sm\:flex-row {
+                flex-direction: row;
+            }
+            .sm\:w-auto {
+                width: auto;
+            }
+        }
+
+        /* Embedded Google Fonts - Inter */
+        /* IMPORTANT: For TRUE offline font display, you need to download these .woff2 files and
+           host them locally alongside your HTML file. Then, update the `src` URLs below
+           to point to your local files (e.g., src: url('fonts/inter-v13-latin-300.woff2')).
+           These URLs currently still point to Google's servers. */
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Darker text for readability */
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Message box animation */
+        .message-box-show {
+            animation: fadeInOut 5s forwards;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        /* Resume Preview Specific Styles */
+        #resume-preview {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0; /* gray-200 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #334155;
+            max-width: 8.5in; /* Standard letter width for A4/Letter approximation */
+            min-height: 11in; /* Standard letter height */
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* Ensure it takes full width of its container */
+        }
+
+        #resume-preview h2 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #1a202c; /* gray-900 */
+            border-bottom: 2px solid #cbd5e1; /* gray-300 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        #resume-preview h3 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #2d3748; /* gray-800 */
+            margin-bottom: 0.5rem;
+        }
+
+        #resume-preview .section-item {
+            margin-bottom: 1rem;
+        }
+
+        #resume-preview ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #resume-preview ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        #resume-photo-preview {
+            width: 120px; /* Standard passport photo width */
+            height: 160px; /* Standard passport photo height (3:4 aspect ratio) */
+            object-fit: cover; /* Ensures the image covers the area, cropping as needed */
+            border-radius: 0.5rem; /* rounded-lg */
+            border: 1px solid #cbd5e1; /* gray-300 */
+            margin-bottom: 1rem;
+            display: block; /* Ensures proper margin behavior */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hide elements that are for input only, not for PDF preview */
+        .hide-for-pdf {
+            display: none !important;
+        }
+
+        /* Print styles for PDF generation */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+            }
+            header, footer, .container > div:not(#resume-preview), #message-box {
+                display: none !important;
+            }
+            #resume-preview {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0.5in !important; /* Standard print margins */
+                width: 8.5in !important;
+                min-height: 11in !important;
+                page-break-after: always;
+            }
+            /* Adjust font sizes slightly for print if needed */
+            #resume-preview h1 { font-size: 2rem; }
+            #resume-preview h2 { font-size: 1.3rem; }
+            #resume-preview h3 { font-size: 1rem; }
+            #resume-preview p, #resume-preview ul li { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (consistent with homepage) -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out">
+                AllToolsOnline
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav id="main-nav" class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Tools</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">About Us</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation Menu (hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden mt-4 space-y-2 px-4 pb-2 bg-white border-t border-gray-200 hidden">
+            <a href="index.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Home</a>
+            <a href="#" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Tools</a>
+            <a href="index.html#about" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">About Us</a>
+            <a href="index.html#contact" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content for Resume Generator -->
+    <main class="py-16 px-6 md:px-10 bg-gray-50 min-h-screen">
+        <div class="container mx-auto max-w-5xl bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Beautiful Resume Generator</h1>
+            <p class="text-center text-gray-600 mb-8">
+                Create a professional and visually appealing resume. Your data is processed securely offline.
+            </p>
+
+            <!-- Input Form Section -->
+            <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-inner">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Your Details</h2>
+
+                <!-- Personal Information -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="full-name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                            <input type="text" id="full-name" value="John Doe"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label for="job-title" class="block text-gray-700 text-sm font-bold mb-2">Job Title/Profession:</label>
+                            <input type="text" id="job-title" value="Software Engineer"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" value="john.doe@example.com"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone:</label>
+                            <input type="tel" id="phone" value="(123) 456-7890"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+                            <input type="text" id="address" value="123 Main St, Anytown, USA"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="linkedin" class="block text-gray-700 text-sm font-bold mb-2">LinkedIn Profile (URL):</label>
+                            <input type="url" id="linkedin" value="https://linkedin.com/in/johndoe"
+                                   class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Upload -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Your Photo (Optional)</h3>
+                    <label for="photo-upload" class="block text-gray-700 text-sm font-bold mb-2">Upload Photo (auto-cropped to 3:4):</label>
+                    <input type="file" id="photo-upload" accept="image/jpeg, image/png"
+                           class="block w-full text-sm text-gray-500
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-full file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-blue-50 file:text-blue-700
+                                  hover:file:bg-blue-100 cursor-pointer">
+                    <p class="text-sm text-gray-500 mt-2">Recommended: Headshot, clear background.</p>
+                    <canvas id="photo-canvas" class="hidden"></canvas> <!-- Hidden canvas for cropping -->
+                </div>
+
+                <!-- Summary/Objective -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Summary / Objective</h3>
+                    <textarea id="summary" rows="4"
+                              class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400 resize-y"
+                              placeholder="A concise summary of your professional background and career goals.">Highly motivated Software Engineer with 5+ years of experience in developing scalable web applications using modern JavaScript frameworks. Proven ability to deliver high-quality code and collaborate effectively in agile environments. Seeking to leverage expertise in a challenging role.</textarea>
+                </div>
+
+                <!-- Work Experience -->
+                <div id="work-experience-section" class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Work Experience</h3>
+                    <div id="work-experience-entries">
+                        <!-- Example Work Experience Entry -->
+                        <div class="work-experience-entry bg-white p-4 rounded-lg shadow-sm mb-4 border border-gray-100">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">Job Title:</label>
+                                    <input type="text" value="Senior Software Engineer" class="job-title-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">Company:</label>
+                                    <input type="text" value="Tech Solutions Inc." class="company-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">Start Date:</label>
+                                    <input type="text" value="Jan 2022" class="start-date-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">End Date:</label>
+                                    <input type="text" value="Present" class="end-date-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                            </div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Responsibilities/Achievements (one per line):</label>
+                            <textarea rows="4" class="responsibilities-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 resize-y">Developed and maintained RESTful APIs for a high-traffic e-commerce platform.
+Led a team of 3 junior developers, mentoring and code reviewing.
+Improved system performance by 20% through database optimization.</textarea>
+                            <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-work-experience"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md mt-4">
+                        Add Work Experience
+                    </button>
+                </div>
+
+                <!-- Education -->
+                <div id="education-section" class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Education</h3>
+                    <div id="education-entries">
+                        <!-- Example Education Entry -->
+                        <div class="education-entry bg-white p-4 rounded-lg shadow-sm mb-4 border border-gray-100">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">Degree/Major:</label>
+                                    <input type="text" value="M.Sc. in Computer Science" class="degree-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">University/Institution:</label>
+                                    <input type="text" value="State University" class="institution-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">Graduation Year:</label>
+                                    <input type="text" value="2021" class="grad-year-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                                </div>
+                            </div>
+                            <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-education"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md mt-4">
+                        Add Education
+                    </button>
+                </div>
+
+                <!-- Skills -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Skills</h3>
+                    <textarea id="skills" rows="3"
+                              class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400 resize-y"
+                              placeholder="List your skills, separated by commas (e.g., JavaScript, React, Node.js, SQL)">JavaScript, React, Node.js, Python, SQL, AWS, Git, Agile Methodologies</textarea>
+                </div>
+
+                <!-- Projects (Optional) -->
+                <div id="projects-section" class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Projects (Optional)</h3>
+                    <div id="project-entries">
+                        <!-- Example Project Entry -->
+                        <div class="project-entry bg-white p-4 rounded-lg shadow-sm mb-4 border border-gray-100">
+                            <div class="mb-3">
+                                <label class="block text-gray-700 text-sm font-bold mb-2">Project Name:</label>
+                                <input type="text" value="E-commerce Dashboard" class="project-name-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                            </div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Description (one per line):</label>
+                            <textarea rows="3" class="project-description-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 resize-y">Developed a real-time analytics dashboard for sales data.
+Integrated with Stripe API for payment processing.
+Utilized D3.js for interactive data visualizations.</textarea>
+                            <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-project"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md mt-4">
+                        Add Project
+                    </button>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <button id="generate-pdf-button"
+                            class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:scale-105">
+                        Download Resume as PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resume Preview Section -->
+            <div id="resume-preview-container" class="mt-8 flex flex-col items-center">
+                <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">Live Preview</h2>
+                <p class="text-center text-gray-600 mb-4">This is how your resume will look in the PDF.</p>
+
+                <div id="resume-preview">
+                    <!-- Photo will be inserted here by JS -->
+                    <img id="resume-photo-preview" src="" alt="Your Photo" class="hidden">
+
+                    <h1 id="preview-full-name" class="text-3xl font-bold text-center text-gray-900 mb-1">John Doe</h1>
+                    <p id="preview-job-title" class="text-xl text-center text-gray-700 mb-4">Software Engineer</p>
+
+                    <div class="text-center text-gray-600 mb-6">
+                        <span id="preview-email" class="inline-block mx-2">john.doe@example.com</span> |
+                        <span id="preview-phone" class="inline-block mx-2">(123) 456-7890</span> |
+                        <span id="preview-address" class="inline-block mx-2">123 Main St, Anytown, USA</span>
+                        <a id="preview-linkedin" href="https://linkedin.com/in/johndoe" target="_blank" class="text-blue-600 hover:underline inline-block mx-2">LinkedIn</a>
+                    </div>
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Summary</h2>
+                    <p id="preview-summary" class="text-gray-700 mb-6">Highly motivated Software Engineer with 5+ years of experience in developing scalable web applications using modern JavaScript frameworks. Proven ability to deliver high-quality code and collaborate effectively in agile environments. Seeking to leverage expertise in a challenging role.</p>
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Work Experience</h2>
+                    <div id="preview-work-experience">
+                        <!-- Work experience entries will be populated here by JS -->
+                        <div class="section-item">
+                            <h3 class="text-lg font-semibold text-gray-800">Senior Software Engineer at Tech Solutions Inc.</h3>
+                            <p class="text-gray-600 text-sm mb-2">Jan 2022 - Present</p>
+                            <ul class="list-disc ml-6 text-gray-700">
+                                <li>Developed and maintained RESTful APIs for a high-traffic e-commerce platform.</li>
+                                <li>Led a team of 3 junior developers, mentoring and code reviewing.</li>
+                                <li>Improved system performance by 20% through database optimization.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
+                    <div id="preview-education">
+                        <!-- Education entries will be populated here by JS -->
+                        <div class="section-item">
+                            <h3 class="text-lg font-semibold text-gray-800">M.Sc. in Computer Science, State University</h3>
+                            <p class="text-gray-600 text-sm mb-2">Graduated: 2021</p>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
+                    <p id="preview-skills" class="text-gray-700 mb-6">JavaScript, React, Node.js, Python, SQL, AWS, Git, Agile Methodologies</p>
+
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Projects</h2>
+                    <div id="preview-projects">
+                        <!-- Projects will be populated here by JS -->
+                        <div class="section-item">
+                            <h3 class="text-lg font-semibold text-gray-800">E-commerce Dashboard</h3>
+                            <ul class="list-disc ml-6 text-gray-700">
+                                <li>Developed a real-time analytics dashboard for sales data.</li>
+                                <li>Integrated with Stripe API for payment processing.</li>
+                                <li>Utilized D3.js for interactive data visualizations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Box for alerts/errors -->
+            <div id="message-box" class="hidden mt-6 p-4 rounded-lg text-sm" role="alert">
+                <p id="message-text"></p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section (consistent with homepage) -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 AllToolsOnline. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMPORTANT: EMBED THE ENTIRE HTML2CANVAS.MIN.JS LIBRARY HERE FOR OFFLINE FUNCTIONALITY -->
+    <!--
+        To make this page truly offline, you MUST copy the ENTIRE content of
+        the html2canvas.min.js library and paste it into the <script> tags below.
+
+        1. Go to this URL:
+           https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js
+        2. Select and COPY ALL the text from that page.
+        3. Paste it directly between the <script> and </script> tags below,
+           replacing this entire comment block and the placeholder code.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- IMPORTANT: EMBED THE ENTIRE JSPDF.UMD.MIN.JS LIBRARY HERE FOR OFFLINE FUNCTIONALITY -->
+    <!--
+        To make this page truly offline, you MUST copy the ENTIRE content of
+        the jspdf.umd.min.js library and paste it into the <script> tags below.
+
+        1. Go to this URL:
+           https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js
+        2. Select and COPY ALL the text from that page.
+        3. Paste it directly between the <script> and </script> tags below,
+           replacing this entire comment block and the placeholder code.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js" integrity="sha512-ad3j5/L4h648YM/KObaUfjCsZRBP9sAOmpjaT2BDx6u9aBrKFp7SbeHykruy83rxfmG42+5QqeL/ngcojglbJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- IMPORTANT: EMBED THE ENTIRE FILESAVER.MIN.JS LIBRARY HERE FOR OFFLINE FUNCTIONALITY -->
+    <!--
+        To make this page truly offline, you MUST copy the ENTIRE content of
+        the FileSaver.min.js library and paste it into the <script> tags below.
+
+        1. Go to this URL:
+           https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js
+        2. Select and COPY ALL the text from that page.
+        3. Paste it directly between the <script> and </script> tags below,
+           replacing this entire comment block and the placeholder code.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DOM Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const messageBox = document.getElementById('message-box');
+            const messageText = document.getElementById('message-text');
+
+            // Input Fields
+            const fullNameInput = document.getElementById('full-name');
+            const jobTitleInput = document.getElementById('job-title');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const addressInput = document.getElementById('address');
+            const linkedinInput = document.getElementById('linkedin');
+            const photoUploadInput = document.getElementById('photo-upload');
+            const photoCanvas = document.getElementById('photo-canvas');
+            const photoCtx = photoCanvas.getContext('2d');
+            const summaryInput = document.getElementById('summary');
+            const skillsInput = document.getElementById('skills');
+
+            // Dynamic Sections
+            const workExperienceEntriesDiv = document.getElementById('work-experience-entries');
+            const addWorkExperienceButton = document.getElementById('add-work-experience');
+            const educationEntriesDiv = document.getElementById('education-entries');
+            const addEducationButton = document.getElementById('add-education');
+            const projectEntriesDiv = document.getElementById('project-entries');
+            const addProjectButton = document.getElementById('add-project');
+
+            // Preview Elements
+            const resumePreview = document.getElementById('resume-preview');
+            const previewPhoto = document.getElementById('resume-photo-preview');
+            const previewFullName = document.getElementById('preview-full-name');
+            const previewJobTitle = document.getElementById('preview-job-title');
+            const previewEmail = document.getElementById('preview-email');
+            const previewPhone = document.getElementById('preview-phone');
+            const previewAddress = document.getElementById('preview-address');
+            const previewLinkedin = document.getElementById('preview-linkedin');
+            const previewSummary = document.getElementById('preview-summary');
+            const previewWorkExperience = document.getElementById('preview-work-experience');
+            const previewEducation = document.getElementById('preview-education');
+            const previewSkills = document.getElementById('preview-skills');
+            const previewProjects = document.getElementById('preview-projects');
+
+            // Buttons
+            const generatePdfButton = document.getElementById('generate-pdf-button');
+
+            // --- Global Variables ---
+            let uploadedPhoto = null; // Stores the Image object of the uploaded photo
+
+            // --- Utility Functions ---
+
+            // Function to display messages to the user
+            function showMessage(message, type = 'info') {
+                messageText.textContent = message;
+                messageBox.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700', 'bg-blue-100', 'text-blue-700');
+                if (type === 'error') {
+                    messageBox.classList.add('bg-red-100', 'text-red-700');
+                } else if (type === 'success') {
+                    messageBox.classList.add('bg-green-100', 'text-green-700');
+                } else { // info
+                    messageBox.classList.add('bg-blue-100', 'text-blue-700');
+                }
+                messageBox.classList.add('message-box-show');
+
+                messageBox.addEventListener('animationend', () => {
+                    messageBox.classList.remove('message-box-show');
+                    messageBox.classList.add('hidden');
+                }, { once: true });
+            }
+
+            // Function to update the resume preview
+            function updatePreview() {
+                previewFullName.textContent = fullNameInput.value || 'Your Name';
+                previewJobTitle.textContent = jobTitleInput.value || 'Your Job Title';
+                previewEmail.textContent = emailInput.value || 'your.email@example.com';
+                previewPhone.textContent = phoneInput.value || '(123) 456-7890';
+                previewAddress.textContent = addressInput.value || 'Your Address';
+
+                if (linkedinInput.value) {
+                    previewLinkedin.href = linkedinInput.value;
+                    previewLinkedin.textContent = 'LinkedIn';
+                    previewLinkedin.classList.remove('hidden');
+                } else {
+                    previewLinkedin.classList.add('hidden');
+                }
+
+                previewSummary.textContent = summaryInput.value || 'A concise summary of your professional background and career goals.';
+                previewSkills.textContent = skillsInput.value || 'No skills entered.';
+
+                // Update Work Experience
+                previewWorkExperience.innerHTML = '';
+                document.querySelectorAll('.work-experience-entry').forEach(entry => {
+                    const jobTitle = entry.querySelector('.job-title-input').value;
+                    const company = entry.querySelector('.company-input').value;
+                    const startDate = entry.querySelector('.start-date-input').value;
+                    const endDate = entry.querySelector('.end-date-input').value;
+                    const responsibilities = entry.querySelector('.responsibilities-input').value.split('\n').filter(line => line.trim() !== '');
+
+                    if (jobTitle && company) {
+                        const div = document.createElement('div');
+                        div.classList.add('section-item');
+                        div.innerHTML = `
+                            <h3 class="text-lg font-semibold text-gray-800">${jobTitle} at ${company}</h3>
+                            <p class="text-gray-600 text-sm mb-2">${startDate} - ${endDate}</p>
+                            <ul class="list-disc ml-6 text-gray-700">
+                                ${responsibilities.map(res => `<li>${res.trim()}</li>`).join('')}
+                            </ul>
+                        `;
+                        previewWorkExperience.appendChild(div);
+                    }
+                });
+                if (previewWorkExperience.innerHTML === '') {
+                    previewWorkExperience.innerHTML = '<p class="text-gray-600">No work experience entered.</p>';
+                }
+
+
+                // Update Education
+                previewEducation.innerHTML = '';
+                document.querySelectorAll('.education-entry').forEach(entry => {
+                    const degree = entry.querySelector('.degree-input').value;
+                    const institution = entry.querySelector('.institution-input').value;
+                    const gradYear = entry.querySelector('.grad-year-input').value;
+
+                    if (degree && institution) {
+                        const div = document.createElement('div');
+                        div.classList.add('section-item');
+                        div.innerHTML = `
+                            <h3 class="text-lg font-semibold text-gray-800">${degree}, ${institution}</h3>
+                            <p class="text-gray-600 text-sm mb-2">Graduated: ${gradYear}</p>
+                        `;
+                        previewEducation.appendChild(div);
+                    }
+                });
+                if (previewEducation.innerHTML === '') {
+                    previewEducation.innerHTML = '<p class="text-gray-600">No education entered.</p>';
+                }
+
+                // Update Projects
+                previewProjects.innerHTML = '';
+                document.querySelectorAll('.project-entry').forEach(entry => {
+                    const projectName = entry.querySelector('.project-name-input').value;
+                    const description = entry.querySelector('.project-description-input').value.split('\n').filter(line => line.trim() !== '');
+
+                    if (projectName) {
+                        const div = document.createElement('div');
+                        div.classList.add('section-item');
+                        div.innerHTML = `
+                            <h3 class="text-lg font-semibold text-gray-800">${projectName}</h3>
+                            <ul class="list-disc ml-6 text-gray-700">
+                                ${description.map(desc => `<li>${desc.trim()}</li>`).join('')}
+                            </ul>
+                        `;
+                        previewProjects.appendChild(div);
+                    }
+                });
+                if (previewProjects.innerHTML === '') {
+                    previewProjects.innerHTML = '<p class="text-gray-600">No projects entered.</p>';
+                }
+            }
+
+            // --- Dynamic Section Functions ---
+
+            function createWorkExperienceEntry() {
+                const div = document.createElement('div');
+                div.classList.add('work-experience-entry', 'bg-white', 'p-4', 'rounded-lg', 'shadow-sm', 'mb-4', 'border', 'border-gray-100');
+                div.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Job Title:</label>
+                            <input type="text" value="" class="job-title-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Company:</label>
+                            <input type="text" value="" class="company-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Start Date:</label>
+                            <input type="text" value="" class="start-date-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">End Date:</label>
+                            <input type="text" value="" class="end-date-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                    </div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Responsibilities/Achievements (one per line):</label>
+                    <textarea rows="4" class="responsibilities-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 resize-y"></textarea>
+                    <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                `;
+                workExperienceEntriesDiv.appendChild(div);
+                addInputListeners(div);
+                div.querySelector('.remove-entry-button').addEventListener('click', () => {
+                    div.remove();
+                    updatePreview();
+                });
+            }
+
+            function createEducationEntry() {
+                const div = document.createElement('div');
+                div.classList.add('education-entry', 'bg-white', 'p-4', 'rounded-lg', 'shadow-sm', 'mb-4', 'border', 'border-gray-100');
+                div.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Degree/Major:</label>
+                            <input type="text" value="" class="degree-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">University/Institution:</label>
+                            <input type="text" value="" class="institution-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Graduation Year:</label>
+                            <input type="text" value="" class="grad-year-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                        </div>
+                    </div>
+                    <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                `;
+                educationEntriesDiv.appendChild(div);
+                addInputListeners(div);
+                div.querySelector('.remove-entry-button').addEventListener('click', () => {
+                    div.remove();
+                    updatePreview();
+                });
+            }
+
+            function createProjectEntry() {
+                const div = document.createElement('div');
+                div.classList.add('project-entry', 'bg-white', 'p-4', 'rounded-lg', 'shadow-sm', 'mb-4', 'border', 'border-gray-100');
+                div.innerHTML = `
+                    <div class="mb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Project Name:</label>
+                        <input type="text" value="" class="project-name-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700">
+                    </div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Description (one per line):</label>
+                    <textarea rows="3" class="project-description-input shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 resize-y"></textarea>
+                    <button class="remove-entry-button mt-3 bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 ease-in-out">Remove</button>
+                `;
+                projectEntriesDiv.appendChild(div);
+                addInputListeners(div);
+                div.querySelector('.remove-entry-button').addEventListener('click', () => {
+                    div.remove();
+                    updatePreview();
+                });
+            }
+
+            function addInputListeners(container) {
+                container.querySelectorAll('input, textarea').forEach(input => {
+                    input.addEventListener('input', updatePreview);
+                });
+            }
+
+            // --- Photo Cropping Functionality ---
+            photoUploadInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (!file) {
+                    uploadedPhoto = null;
+                    previewPhoto.classList.add('hidden');
+                    return;
+                }
+
+                if (!file.type.startsWith('image/')) {
+                    showMessage('Please upload an image file (JPG or PNG).', 'error');
+                    uploadedPhoto = null;
+                    previewPhoto.classList.add('hidden');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        // Define target aspect ratio (3:4)
+                        const targetAspectRatio = 3 / 4; // width / height
+                        let sourceX = 0;
+                        let sourceY = 0;
+                        let sourceWidth = img.width;
+                        let sourceHeight = img.height;
+
+                        const imageAspectRatio = img.width / img.height;
+
+                        if (imageAspectRatio > targetAspectRatio) {
+                            // Image is wider than 3:4, crop width
+                            sourceWidth = img.height * targetAspectRatio;
+                            sourceX = (img.width - sourceWidth) / 2;
+                        } else if (imageAspectRatio < targetAspectRatio) {
+                            // Image is taller than 3:4, crop height
+                            sourceHeight = img.width / targetAspectRatio;
+                            sourceY = (img.height - sourceHeight) / 2;
+                        }
+
+                        // Set canvas dimensions to the cropped size
+                        photoCanvas.width = sourceWidth;
+                        photoCanvas.height = sourceHeight;
+
+                        // Draw the cropped image onto the canvas
+                        photoCtx.drawImage(
+                            img,
+                            sourceX, sourceY, sourceWidth, sourceHeight, // Source rectangle
+                            0, 0, photoCanvas.width, photoCanvas.height // Destination rectangle
+                        );
+
+                        // Set the preview image source from the canvas
+                        previewPhoto.src = photoCanvas.toDataURL('image/png');
+                        previewPhoto.classList.remove('hidden');
+                        uploadedPhoto = img; // Store original image for potential re-cropping if needed
+                        showMessage('Photo uploaded and auto-cropped!', 'success');
+                    };
+                    img.onerror = () => {
+                        showMessage('Could not load photo. Please try a different file.', 'error');
+                        previewPhoto.classList.add('hidden');
+                        uploadedPhoto = null;
+                    };
+                    img.src = e.target.result;
+                };
+                reader.onerror = () => {
+                    showMessage('Error reading photo file.', 'error');
+                    previewPhoto.classList.add('hidden');
+                    uploadedPhoto = null;
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // --- PDF Generation ---
+            generatePdfButton.addEventListener('click', async () => {
+                // Check if libraries are loaded
+                if (typeof html2canvas === 'undefined' || typeof jspdf === 'undefined' || typeof saveAs === 'undefined') {
+                    showMessage('Required libraries (html2canvas, jsPDF, FileSaver) are not loaded. Please ensure they are embedded correctly.', 'error');
+                    console.error("PDF generation libraries missing.");
+                    return;
+                }
+
+                showMessage('Generating PDF, please wait...', 'info');
+                generatePdfButton.disabled = true; // Disable button during generation
+
+                // Temporarily hide input-only elements for PDF capture
+                const inputElements = document.querySelectorAll('.input-field, .add-button, .remove-entry-button');
+                inputElements.forEach(el => el.classList.add('hide-for-pdf'));
+
+                // Get the resume preview element
+                const element = document.getElementById('resume-preview');
+
+                try {
+                    // Use html2canvas to render the HTML element to a canvas
+                    const canvas = await html2canvas(element, {
+                        scale: 2, // Increase scale for better resolution in PDF
+                        useCORS: true, // Required if images are from different origins (though ours are local)
+                        logging: false, // Disable html2canvas logging if not debugging
+                        scrollY: -window.scrollY, // Correct scrolling issues
+                        windowHeight: document.documentElement.offsetHeight,
+                        width: element.offsetWidth,
+                        height: element.offsetHeight
+                    });
+
+                    const imgData = canvas.toDataURL('image/jpeg', 1.0); // Convert canvas to JPEG data URL for smaller file size, quality 1.0
+
+                    const pdf = new jspdf.jsPDF('p', 'pt', 'a4'); // 'p' for portrait, 'pt' for points, 'a4' for A4 size
+                    const imgWidth = pdf.internal.pageSize.getWidth();
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    let position = 0;
+                    let heightLeft = imgHeight;
+
+                    // Add image to PDF, handling multiple pages if content is long
+                    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pdf.internal.pageSize.getHeight();
+
+                    while (heightLeft >= 0) {
+                        position = heightLeft - imgHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                        heightLeft -= pdf.internal.pageSize.getHeight();
+                    }
+
+                    // Save the PDF
+                    const pdfBlob = pdf.output('blob');
+                    saveAs(pdfBlob, 'resume.pdf');
+                    showMessage('Resume PDF generated and downloaded!', 'success');
+
+                } catch (error) {
+                    console.error('Error generating PDF:', error);
+                    showMessage('Failed to generate PDF. Please try again. Error: ' + error.message, 'error');
+                } finally {
+                    // Re-show input-only elements
+                    inputElements.forEach(el => el.classList.remove('hide-for-pdf'));
+                    generatePdfButton.disabled = false;
+                }
+            });
+
+            // --- Event Listeners ---
+
+            // Listen to all input changes to update preview in real-time
+            document.querySelectorAll('#full-name, #job-title, #email, #phone, #address, #linkedin, #summary, #skills').forEach(input => {
+                input.addEventListener('input', updatePreview);
+            });
+
+            // Add dynamic section buttons
+            addWorkExperienceButton.addEventListener('click', createWorkExperienceEntry);
+            addEducationButton.addEventListener('click', createEducationEntry);
+            addProjectButton.addEventListener('click', createProjectEntry);
+
+            // Initial setup: Add listeners to existing example entries
+            document.querySelectorAll('.work-experience-entry').forEach(addInputListeners);
+            document.querySelectorAll('.education-entry').forEach(addInputListeners);
+            document.querySelectorAll('.project-entry').forEach(addInputListeners);
+
+            // Add remove listeners to initial example entries
+            document.querySelectorAll('.work-experience-entry .remove-entry-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.target.closest('.work-experience-entry').remove();
+                    updatePreview();
+                });
+            });
+            document.querySelectorAll('.education-entry .remove-entry-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.target.closest('.education-entry').remove();
+                    updatePreview();
+                });
+            });
+            document.querySelectorAll('.project-entry .remove-entry-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.target.closest('.project-entry').remove();
+                    updatePreview();
+                });
+            });
+
+
+            // Mobile Menu Toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Initial preview update
+            updatePreview();
+        });
+    </script>
+</body>
+</html>
