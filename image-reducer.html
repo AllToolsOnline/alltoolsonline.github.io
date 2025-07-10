@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Reducer - AllToolsOnline</title>
+
+    <!-- Embedded Tailwind CSS (for offline use on GitHub Pages) -->
+    <style>
+        /*!
+         * Tailwind CSS v3.4.3 | MIT License | https://tailwindcss.com
+         */
+        *, ::before, ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+        ::before, ::after {
+            --tw-content: '';
+        }
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+        }
+        body {
+            margin: 0;
+            line-height: inherit;
+        }
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px;
+        }
+        abbr:where([title]) {
+            text-decoration: underline dotted;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        b, strong {
+            font-weight: bolder;
+        }
+        code, kbd, samp, pre {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 1em;
+        }
+        small {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        sup {
+            top: -0.5em;
+        }
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse;
+        }
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+        button, select {
+            text-transform: none;
+        }
+        button, [type='button'], [type='reset'], [type='submit'] {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+        }
+        :-moz-focusring {
+            outline: auto;
+        }
+        :-moz-ui-invalid {
+            box-shadow: none;
+        }
+        progress {
+            vertical-align: baseline;
+        }
+        ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+            height: auto;
+        }
+        [type='search'] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+        ::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+        summary {
+            display: list-item;
+        }
+        blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+            margin: 0;
+        }
+        fieldset {
+            margin: 0;
+            padding: 0;
+        }
+        legend {
+            padding: 0;
+        }
+        ol, ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input::placeholder, textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af;
+        }
+        button, [role="button"] {
+            cursor: pointer;
+        }
+        :disabled {
+            cursor: default;
+        }
+        img, svg, video, canvas, audio, iframe, embed, object {
+            display: block;
+            vertical-align: middle;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        [hidden] {
+            display: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px;
+            }
+        }
+        .flex {
+            display: flex;
+        }
+        .hidden {
+            display: none;
+        }
+        .block {
+            display: block;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .flex-grow {
+            flex-grow: 1;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+        }
+        .relative {
+            position: relative;
+        }
+        .sticky {
+            position: sticky;
+        }
+        .top-0 {
+            top: 0px;
+        }
+        .z-50 {
+            z-index: 50;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .-mt-10 {
+            margin-top: -2.5rem;
+        }
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .p-2\.5 {
+            padding: 0.625rem; /* Equivalent to 10px */
+        }
+        .p-3 {
+            padding: 0.75rem;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .p-6 {
+            padding: 1.5rem;
+        }
+        .p-8 {
+            padding: 2rem;
+        }
+        .w-5 {
+            width: 1.25rem; /* 20px */
+        }
+        .w-6 {
+            width: 1.5rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .h-5 {
+            height: 1.25rem; /* 20px */
+        }
+        .h-6 {
+            height: 1.5rem;
+        }
+        .h-auto {
+            height: auto;
+        }
+        .min-h-screen {
+            min-height: 100vh;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1;
+        }
+        .font-bold {
+            font-weight: 700;
+        }
+        .font-extrabold {
+            font-weight: 800;
+        }
+        .font-medium {
+            font-weight: 500;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .leading-tight {
+            line-height: 1.25;
+        }
+        .text-white {
+            color: #fff;
+        }
+        .text-gray-50 {
+            color: #f9fafb;
+        }
+        .text-gray-300 {
+            color: #d1d5db;
+        }
+        .text-gray-400 {
+            color: #9ca3af;
+        }
+        .text-gray-600 {
+            color: #4b5563;
+        }
+        .text-gray-700 {
+            color: #374151;
+        }
+        .text-gray-800 {
+            color: #1f2937;
+        }
+        .text-gray-900 {
+            color: #111827;
+        }
+        .text-blue-50 {
+            color: #eff6ff;
+        }
+        .text-blue-100 {
+            color: #dbeafe;
+        }
+        .text-blue-300 {
+            color: #93c5fd;
+        }
+        .text-blue-600 {
+            color: #2563eb;
+        }
+        .text-blue-700 {
+            color: #1d4ed8;
+        }
+        .text-green-100 {
+            color: #dcfce7;
+        }
+        .text-green-600 {
+            color: #16a34a;
+        }
+        .text-green-700 {
+            color: #15803d;
+        }
+        .text-purple-100 {
+            color: #f3e8ff;
+        }
+        .text-purple-600 {
+            color: #9333ea;
+        }
+        .text-red-100 {
+            color: #fee2e2;
+        }
+        .text-red-600 {
+            color: #dc2626;
+        }
+        .text-red-700 {
+            color: #b91c1c;
+        }
+        .text-yellow-300 {
+            color: #fde047;
+        }
+        .text-yellow-600 {
+            color: #eab308;
+        }
+        .text-indigo-600 {
+            color: #4f46e5;
+        }
+        .bg-white {
+            background-color: #fff;
+        }
+        .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        .bg-gray-100 {
+            background-color: #f3f4f6;
+        }
+        .bg-gray-800 {
+            background-color: #1f2937;
+        }
+        .bg-blue-50 {
+            background-color: #eff6ff;
+        }
+        .bg-blue-100 {
+            background-color: #dbeafe;
+        }
+        .bg-blue-600 {
+            background-color: #2563eb;
+        }
+        .bg-blue-700 {
+            background-color: #1d4ed8;
+        }
+        .bg-green-100 {
+            background-color: #dcfce7;
+        }
+        .bg-green-600 {
+            color: #16a34a;
+        }
+        .bg-green-700 {
+            color: #15803d;
+        }
+        .bg-purple-100 {
+            background-color: #f3e8ff;
+        }
+        .bg-purple-600 {
+            color: #9333ea;
+        }
+        .bg-red-100 {
+            background-color: #fee2e2;
+        }
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+        .from-blue-500 {
+            --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
+            --tw-gradient-to: #3b82f600 var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .to-indigo-600 {
+            --tw-gradient-to: #4f46e5 var(--tw-gradient-to-position);
+        }
+        .rounded-full {
+            border-radius: 9999px;
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+        .rounded-b-lg {
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        .rounded-t-lg {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+        .rounded-r-lg {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        .rounded-l-lg {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        .border {
+            border-width: 1px;
+        }
+        .border-t {
+            border-top-width: 1px;
+        }
+        .border-r {
+            border-right-width: 1px;
+        }
+        .border-gray-100 {
+            border-color: #f3f4f6;
+        }
+        .border-gray-200 {
+            border-color: #e5e7eb;
+        }
+        .border-gray-300 {
+            border-color: #d1d5db;
+        }
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .shadow-inner {
+            --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+        .focus-within\:ring-2:focus-within {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+        .focus\:ring-2:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+        .focus\:ring-blue-300:focus {
+            --tw-ring-color: #93c5fd;
+        }
+        .focus\:ring-blue-400:focus {
+            --tw-ring-color: #60a5fa;
+        }
+        .resize-y {
+            resize: vertical;
+        }
+        .opacity-90 {
+            opacity: 0.9;
+        }
+        .transition {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .duration-200 {
+            transition-duration: 200ms;
+        }
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+        .ease-in-out {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover\:text-blue-600:hover {
+            color: #2563eb;
+        }
+        .hover\:text-blue-700:hover {
+            color: #1d4ed8;
+        }
+        .hover\:bg-blue-50:hover {
+            background-color: #eff6ff;
+        }
+        .hover\:bg-blue-700:hover {
+            background-color: #1d4ed8;
+        }
+        .hover\:bg-gray-100:hover {
+            background-color: #f3f4f6;
+        }
+        .hover\:bg-green-700:hover {
+            color: #15803d;
+        }
+        .hover\:shadow-lg:hover {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .hover\:shadow-xl:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .hover\:-translate-y-1:hover {
+            --tw-translate-y: -0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+        .hover\:scale-105:hover {
+            --tw-scale-x: 1.05;
+            --tw-scale-y: 1.05;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+        @media (min-width: 768px) {
+            .md\:px-10 {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+            .md\:flex {
+                display: flex;
+            }
+            .md\:hidden {
+                display: none;
+            }
+            .md\:text-left {
+                text-align: left;
+            }
+            .md\:text-lg {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+            .md\:text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1;
+            }
+            .md\:flex-row {
+                flex-direction: row;
+            }
+            .md\:mb-0 {
+                margin-bottom: 0px;
+            }
+        }
+        @media (min-width: 640px) {
+            .sm\:flex-row {
+                flex-direction: row;
+            }
+            .sm\:w-auto {
+                width: auto;
+            }
+        }
+
+        /* Embedded Google Fonts - Inter */
+        /* IMPORTANT: For TRUE offline font display, you need to download these .woff2 files and
+           host them locally alongside your HTML file. Then, update the `src` URLs below
+           to point to your local files (e.g., src: url('fonts/inter-v13-latin-300.woff2')).
+           These URLs currently still point to Google's servers. */
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMwM.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Darker text for readability */
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Message box animation */
+        .message-box-show {
+            animation: fadeInOut 5s forwards;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+        /* Canvas specific styles */
+        #image-canvas {
+            border: 1px solid #cbd5e1; /* border-gray-300 */
+            background-color: #e2e8f0; /* bg-gray-200 */
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below canvas */
+            margin: 0 auto; /* Center the canvas */
+            cursor: crosshair; /* Indicate crop mode */
+        }
+        /* Styling for the crop overlay */
+        .crop-overlay {
+            position: absolute;
+            border: 2px dashed #3b82f6; /* blue-500 */
+            background: rgba(59, 130, 246, 0.2); /* blue-500 with transparency */
+            cursor: move;
+            box-sizing: border-box;
+        }
+        .crop-handle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #3b82f6; /* blue-500 */
+            border: 1px solid #fff;
+            border-radius: 50%;
+            cursor: grab;
+            z-index: 10;
+        }
+        .crop-handle.nw { top: -5px; left: -5px; cursor: nwse-resize; }
+        .crop-handle.ne { top: -5px; right: -5px; cursor: nesw-resize; }
+        .crop-handle.sw { bottom: -5px; left: -5px; cursor: nesw-resize; }
+        .crop-handle.se { bottom: -5px; right: -5px; cursor: nwse-resize; }
+        .crop-handle.n { top: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+        .crop-handle.s { bottom: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+        .crop-handle.e { right: -5px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+        .crop-handle.w { left: -5px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+
+        /* Disable pointer events on canvas when crop overlay is active */
+        .canvas-container.cropping #image-canvas {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (consistent with homepage) -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out">
+                AllToolsOnline
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav id="main-nav" class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Home</a>
+                <a href="tools.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Tools</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">About Us</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 ease-in-out">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation Menu (hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden mt-4 space-y-2 px-4 pb-2 bg-white border-t border-gray-200 hidden">
+            <a href="index.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Home</a>
+            <a href="tools.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Tools</a>
+            <a href="index.html#about" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">About Us</a>
+            <a href="index.html#contact" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md font-medium transition duration-300 ease-in-out">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content for Image Reducer -->
+    <main class="py-16 px-6 md:px-10 bg-gray-50 min-h-screen">
+        <div class="container mx-auto max-w-4xl bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Image Reducer</h1>
+            <p class="text-center text-gray-600 mb-8">
+                Resize and crop your images directly in your browser. All processing is done offline for your privacy.
+            </p>
+
+            <div class="mb-6">
+                <label for="image-input" class="block text-gray-700 text-sm font-bold mb-2">Upload Image (JPG or PNG):</label>
+                <input type="file" id="image-input" accept="image/jpeg, image/png"
+                       class="block w-full text-sm text-gray-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-full file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-blue-50 file:text-blue-700
+                              hover:file:bg-blue-100 cursor-pointer">
+            </div>
+
+            <div id="image-editor-section" class="hidden">
+                <div class="flex flex-col md:flex-row md:space-x-4 mb-6">
+                    <!-- Resize Options -->
+                    <div class="flex-1 bg-gray-50 p-4 rounded-lg shadow-sm mb-4 md:mb-0">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Resize Options</h3>
+                        <div class="mb-3">
+                            <label for="resize-percentage" class="block text-gray-700 text-sm font-medium mb-1">Percentage:</label>
+                            <input type="range" id="resize-percentage" min="10" max="200" value="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <span id="percentage-value" class="text-sm text-gray-600">100%</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resize-width" class="block text-gray-700 text-sm font-medium mb-1">Width (px):</label>
+                            <input type="number" id="resize-width" placeholder="Auto" class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div class="mb-3">
+                            <label for="resize-height" class="block text-gray-700 text-sm font-medium mb-1">Height (px):</label>
+                            <input type="number" id="resize-height" placeholder="Auto" class="shadow-sm appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="maintain-aspect-ratio" checked class="form-checkbox h-4 w-4 text-blue-600 rounded">
+                            <label for="maintain-aspect-ratio" class="ml-2 text-gray-700 text-sm">Maintain Aspect Ratio</label>
+                        </div>
+                        <button id="apply-resize-button"
+                                class="w-full bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                            Apply Resize
+                        </button>
+                    </div>
+
+                    <!-- Crop Options -->
+                    <div class="flex-1 bg-gray-50 p-4 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Crop Options</h3>
+                        <p class="text-sm text-gray-600 mb-4">Click "Start Crop" then drag on the image to select an area. Drag corners/edges to adjust.</p>
+                        <div class="flex space-x-2 mb-4">
+                            <button id="start-crop-button"
+                                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                                Start Crop
+                            </button>
+                            <button id="apply-crop-button"
+                                    class="flex-1 bg-green-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-700 transition duration-300 ease-in-out shadow-md"
+                                    disabled>
+                                Apply Crop
+                            </button>
+                        </div>
+                        <button id="reset-image-button"
+                                class="w-full bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition duration-300 ease-in-out shadow-md">
+                            Reset Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canvas Display Area -->
+                <div class="mb-6 relative canvas-container">
+                    <canvas id="image-canvas" class="rounded-lg"></canvas>
+                    <div id="crop-overlay" class="hidden">
+                        <!-- Crop handles will be dynamically added here -->
+                    </div>
+                </div>
+
+                <!-- File Size Display -->
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg mb-6 shadow-sm">
+                    <p class="text-gray-700 text-sm">Original Size: <span id="original-size" class="font-semibold">N/A</span></p>
+                    <p class="text-gray-700 text-sm">Reduced Size: <span id="reduced-size" class="font-semibold">N/A</span></p>
+                </div>
+
+                <!-- Download Button -->
+                <div class="flex justify-center">
+                    <button id="download-image-button"
+                            class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:scale-105"
+                            disabled>
+                        Download Image
+                    </button>
+                </div>
+            </div>
+
+            <!-- Message Box for alerts/errors -->
+            <div id="message-box" class="hidden mt-6 p-4 rounded-lg text-sm" role="alert">
+                <p id="message-text"></p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section (consistent with homepage) -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 AllToolsOnline. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMPORTANT: EMBED THE ENTIRE FILESAVER.MIN.JS LIBRARY HERE FOR OFFLINE FUNCTIONALITY -->
+    <!--
+        To make this page truly offline, you MUST copy the ENTIRE content of
+        the FileSaver.min.js library and paste it into the <script> tags below.
+
+        1. Go to this URL:
+           https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js
+        2. Select and COPY ALL the text from that page.
+        3. Paste it directly between the <script> and </script> tags below,
+           replacing this entire comment block and the placeholder code.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Main JavaScript for Image Reducer functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageInput = document.getElementById('image-input');
+            const imageEditorSection = document.getElementById('image-editor-section');
+            const imageCanvas = document.getElementById('image-canvas');
+            const ctx = imageCanvas.getContext('2d');
+            const resizePercentage = document.getElementById('resize-percentage');
+            const percentageValue = document.getElementById('percentage-value');
+            const resizeWidthInput = document.getElementById('resize-width');
+            const resizeHeightInput = document.getElementById('resize-height');
+            const maintainAspectRatioCheckbox = document.getElementById('maintain-aspect-ratio');
+            const applyResizeButton = document.getElementById('apply-resize-button');
+            const startCropButton = document.getElementById('start-crop-button');
+            const applyCropButton = document.getElementById('apply-crop-button');
+            const resetImageButton = document.getElementById('reset-image-button');
+            const downloadImageButton = document.getElementById('download-image-button');
+            const originalSizeSpan = document.getElementById('original-size');
+            const reducedSizeSpan = document.getElementById('reduced-size');
+            const messageBox = document.getElementById('message-box');
+            const messageText = document.getElementById('message-text');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const cropOverlay = document.getElementById('crop-overlay');
+            const canvasContainer = document.querySelector('.canvas-container');
+
+            let originalImage = null; // Stores the original loaded image
+            let currentImage = null;   // Stores the current state of the image (after resize/crop)
+            let originalFile = null;   // Stores the original file object for size comparison
+
+            let isCropping = false;
+            let cropRect = { x: 0, y: 0, width: 0, height: 0 };
+            let startX, startY;
+            let isDraggingCrop = false;
+            let isResizingHandle = null; // 'nw', 'ne', 'sw', 'se', 'n', 's', 'e', 'w'
+
+            // --- Utility Functions ---
+
+            // Function to display messages to the user
+            function showMessage(message, type = 'info') {
+                messageText.textContent = message;
+                messageBox.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700', 'bg-blue-100', 'text-blue-700');
+                if (type === 'error') {
+                    messageBox.classList.add('bg-red-100', 'text-red-700');
+                } else if (type === 'success') {
+                    messageBox.classList.add('bg-green-100', 'text-green-700');
+                } else { // info
+                    messageBox.classList.add('bg-blue-100', 'text-blue-700');
+                }
+                messageBox.classList.add('message-box-show');
+
+                messageBox.addEventListener('animationend', () => {
+                    messageBox.classList.remove('message-box-show');
+                    messageBox.classList.add('hidden');
+                }, { once: true });
+            }
+
+            // Function to format file size
+            function formatBytes(bytes, decimals = 2) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const dm = decimals < 0 ? 0 : decimals;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            }
+
+            // Function to update file size display
+            async function updateFileSizeDisplay() {
+                if (originalFile) {
+                    originalSizeSpan.textContent = formatBytes(originalFile.size);
+                } else {
+                    originalSizeSpan.textContent = 'N/A';
+                }
+
+                if (currentImage) {
+                    try {
+                        const blob = await new Promise(resolve => imageCanvas.toBlob(resolve, 'image/png', 0.9)); // Using PNG for lossless, quality for compression
+                        reducedSizeSpan.textContent = formatBytes(blob.size);
+                    } catch (error) {
+                        console.error("Error getting reduced file size:", error);
+                        reducedSizeSpan.textContent = 'Error';
+                    }
+                } else {
+                    reducedSizeSpan.textContent = 'N/A';
+                }
+            }
+
+            // Function to draw image on canvas
+            function drawImageOnCanvas(img, width, height) {
+                // Set canvas dimensions to image dimensions for drawing
+                imageCanvas.width = width;
+                imageCanvas.height = height;
+
+                // Clear canvas and draw image
+                ctx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
+                ctx.drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
+
+                // Adjust the displayed size of the canvas to fit the container
+                // This ensures it's responsive without distorting the image content
+                imageCanvas.style.width = '100%';
+                imageCanvas.style.height = 'auto'; // Maintain aspect ratio for display
+            }
+
+            // Function to reset the image to its original state
+            function resetImage() {
+                if (originalImage) {
+                    currentImage = originalImage;
+                    drawImageOnCanvas(originalImage, originalImage.width, originalImage.height);
+                    updateFileSizeDisplay();
+                    showMessage('Image reset to original.', 'info');
+                    downloadImageButton.disabled = false;
+                }
+                disableCropping(); // Ensure cropping is off
+            }
+
+            // --- Image Loading ---
+            imageInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (!file) {
+                    imageEditorSection.classList.add('hidden');
+                    return;
+                }
+
+                if (!file.type.startsWith('image/')) {
+                    showMessage('Please upload an image file (JPG or PNG).', 'error');
+                    imageEditorSection.classList.add('hidden');
+                    return;
+                }
+
+                originalFile = file; // Store original file for size comparison
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        originalImage = img;
+                        currentImage = img; // Initially current image is the original
+                        imageEditorSection.classList.remove('hidden');
+                        downloadImageButton.disabled = false;
+
+                        // Set initial canvas size to original image size
+                        drawImageOnCanvas(originalImage, originalImage.width, originalImage.height);
+
+                        // Reset resize inputs to original dimensions
+                        resizeWidthInput.value = originalImage.width;
+                        resizeHeightInput.value = originalImage.height;
+                        resizePercentage.value = 100;
+                        percentageValue.textContent = '100%';
+
+                        updateFileSizeDisplay();
+                        showMessage('Image loaded successfully!', 'success');
+                        disableCropping(); // Always disable cropping on new image load
+                    };
+                    img.onerror = () => {
+                        showMessage('Could not load image. Please try a different file.', 'error');
+                        imageEditorSection.classList.add('hidden');
+                    };
+                    img.src = e.target.result;
+                };
+                reader.onerror = () => {
+                    showMessage('Error reading file.', 'error');
+                    imageEditorSection.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // --- Resize Functionality ---
+            resizePercentage.addEventListener('input', () => {
+                percentageValue.textContent = `${resizePercentage.value}%`;
+                if (currentImage && maintainAspectRatioCheckbox.checked) {
+                    const scale = resizePercentage.value / 100;
+                    resizeWidthInput.value = Math.round(originalImage.width * scale);
+                    resizeHeightInput.value = Math.round(originalImage.height * scale);
+                }
+            });
+
+            resizeWidthInput.addEventListener('input', () => {
+                if (currentImage && maintainAspectRatioCheckbox.checked && resizeWidthInput.value !== '') {
+                    const newWidth = parseInt(resizeWidthInput.value);
+                    const newHeight = Math.round(newWidth / originalImage.width * originalImage.height);
+                    resizeHeightInput.value = newHeight;
+                }
+            });
+
+            resizeHeightInput.addEventListener('input', () => {
+                if (currentImage && maintainAspectRatioCheckbox.checked && resizeHeightInput.value !== '') {
+                    const newHeight = parseInt(resizeHeightInput.value);
+                    const newWidth = Math.round(newHeight / originalImage.height * originalImage.width);
+                    resizeWidthInput.value = newWidth;
+                }
+            });
+
+            applyResizeButton.addEventListener('click', () => {
+                if (!currentImage) {
+                    showMessage('Please load an image first.', 'error');
+                    return;
+                }
+
+                let newWidth = parseInt(resizeWidthInput.value);
+                let newHeight = parseInt(resizeHeightInput.value);
+
+                if (isNaN(newWidth) || newWidth <= 0 || isNaN(newHeight) || newHeight <= 0) {
+                    showMessage('Please enter valid positive numbers for width and height.', 'error');
+                    return;
+                }
+
+                // Create a temporary canvas to draw the resized image
+                const tempCanvas = document.createElement('canvas');
+                const tempCtx = tempCanvas.getContext('2d');
+
+                tempCanvas.width = newWidth;
+                tempCanvas.height = newHeight;
+
+                tempCtx.drawImage(currentImage, 0, 0, newWidth, newHeight);
+
+                // Update currentImage with the resized image from tempCanvas
+                const resizedImg = new Image();
+                resizedImg.onload = () => {
+                    currentImage = resizedImg;
+                    drawImageOnCanvas(currentImage, currentImage.width, currentImage.height);
+                    updateFileSizeDisplay();
+                    showMessage('Image resized successfully!', 'success');
+                    disableCropping(); // Disable cropping after resize
+                };
+                resizedImg.src = tempCanvas.toDataURL(); // Get data URL from temp canvas
+            });
+
+            // --- Crop Functionality ---
+
+            // Dynamically add crop handles to the overlay
+            function addCropHandles() {
+                const handles = ['nw', 'n', 'ne', 'w', 'e', 'sw', 's', 'se'];
+                handles.forEach(pos => {
+                    const handle = document.createElement('div');
+                    handle.classList.add('crop-handle', pos);
+                    handle.dataset.handle = pos;
+                    cropOverlay.appendChild(handle);
+                });
+            }
+
+            // Remove crop handles
+            function removeCropHandles() {
+                cropOverlay.innerHTML = '';
+            }
+
+            // Draw the crop rectangle and handles
+            function drawCropOverlay() {
+                if (!isCropping || !currentImage) {
+                    cropOverlay.classList.add('hidden');
+                    return;
+                }
+
+                // Get canvas position and scale relative to its displayed size
+                const canvasRect = imageCanvas.getBoundingClientRect();
+                const scaleX = imageCanvas.width / canvasRect.width;
+                const scaleY = imageCanvas.height / canvasRect.height;
+
+                // Adjust cropRect to display coordinates
+                const displayX = cropRect.x / scaleX;
+                const displayY = cropRect.y / scaleY;
+                const displayWidth = cropRect.width / scaleX;
+                const displayHeight = cropRect.height / scaleY;
+
+                cropOverlay.style.left = `${displayX}px`;
+                cropOverlay.style.top = `${displayY}px`;
+                cropOverlay.style.width = `${displayWidth}px`;
+                cropOverlay.style.height = `${displayHeight}px`;
+                cropOverlay.classList.remove('hidden');
+
+                // Update handle positions (handles are children of cropOverlay)
+                Array.from(cropOverlay.children).forEach(handle => {
+                    const handlePos = handle.dataset.handle;
+                    switch (handlePos) {
+                        case 'n': handle.style.left = `${displayWidth / 2 - 5}px`; break;
+                        case 's': handle.style.left = `${displayWidth / 2 - 5}px`; break;
+                        case 'e': handle.style.top = `${displayHeight / 2 - 5}px`; break;
+                        case 'w': handle.style.top = `${displayHeight / 2 - 5}px`; break;
+                        default: /* corners are handled by CSS top/left/right/bottom */ break;
+                    }
+                });
+            }
+
+            function enableCropping() {
+                if (!currentImage) {
+                    showMessage('Please load an image first to enable cropping.', 'error');
+                    return;
+                }
+                isCropping = true;
+                addCropHandles();
+                cropOverlay.classList.remove('hidden');
+                canvasContainer.classList.add('cropping'); // Add class to disable canvas pointer events
+                startCropButton.disabled = true;
+                applyCropButton.disabled = false;
+                showMessage('Draw a rectangle on the image to crop.', 'info');
+            }
+
+            function disableCropping() {
+                isCropping = false;
+                isDraggingCrop = false;
+                isResizingHandle = null;
+                cropOverlay.classList.add('hidden');
+                removeCropHandles();
+                canvasContainer.classList.remove('cropping'); // Re-enable canvas pointer events
+                startCropButton.disabled = false;
+                applyCropButton.disabled = true;
+                // Reset cropRect visually for next time
+                cropRect = { x: 0, y: 0, width: 0, height: 0 };
+            }
+
+            startCropButton.addEventListener('click', enableCropping);
+
+            resetImageButton.addEventListener('click', resetImage);
+
+            // Mouse events for cropping
+            cropOverlay.addEventListener('mousedown', (e) => {
+                e.preventDefault(); // Prevent default browser drag behavior
+                e.stopPropagation(); // Stop event from bubbling to canvas
+
+                const overlayRect = cropOverlay.getBoundingClientRect();
+                const mouseX = e.clientX - overlayRect.left;
+                const mouseY = e.clientY - overlayRect.top;
+
+                // Check if a handle was clicked
+                if (e.target.classList.contains('crop-handle')) {
+                    isResizingHandle = e.target.dataset.handle;
+                } else {
+                    // Start dragging the entire crop rectangle
+                    isDraggingCrop = true;
+                }
+
+                startX = e.clientX;
+                startY = e.clientY;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isCropping || (!isDraggingCrop && !isResizingHandle)) return;
+
+                const canvasRect = imageCanvas.getBoundingClientRect();
+                const scaleX = imageCanvas.width / canvasRect.width;
+                const scaleY = imageCanvas.height / canvasRect.height;
+
+                const dx = (e.clientX - startX) * scaleX;
+                const dy = (e.clientY - startY) * scaleY;
+
+                if (isDraggingCrop) {
+                    // Dragging the whole rectangle
+                    cropRect.x += dx;
+                    cropRect.y += dy;
+                } else if (isResizingHandle) {
+                    // Resizing from a handle
+                    switch (isResizingHandle) {
+                        case 'nw':
+                            cropRect.x += dx; cropRect.y += dy;
+                            cropRect.width -= dx; cropRect.height -= dy;
+                            break;
+                        case 'n':
+                            cropRect.y += dy; cropRect.height -= dy;
+                            break;
+                        case 'ne':
+                            cropRect.width += dx; cropRect.y += dy;
+                            cropRect.height -= dy;
+                            break;
+                        case 'w':
+                            cropRect.x += dx; cropRect.width -= dx;
+                            break;
+                        case 'e':
+                            cropRect.width += dx;
+                            break;
+                        case 'sw':
+                            cropRect.x += dx; cropRect.height += dy;
+                            cropRect.width -= dx;
+                            break;
+                        case 's':
+                            cropRect.height += dy;
+                            break;
+                        case 'se':
+                            cropRect.width += dx; cropRect.height += dy;
+                            break;
+                    }
+                }
+
+                // Clamp cropRect to canvas boundaries (in image pixels)
+                cropRect.x = Math.max(0, Math.min(cropRect.x, imageCanvas.width - cropRect.width));
+                cropRect.y = Math.max(0, Math.min(cropRect.y, imageCanvas.height - cropRect.height));
+                cropRect.width = Math.max(0, Math.min(cropRect.width, imageCanvas.width - cropRect.x));
+                cropRect.height = Math.max(0, Math.min(cropRect.height, imageCanvas.height - cropRect.y));
+
+                // Ensure width/height don't go negative
+                cropRect.width = Math.max(10, cropRect.width); // Minimum size
+                cropRect.height = Math.max(10, cropRect.height); // Minimum size
+
+                // Re-clamp after minimum size check to ensure it doesn't go out of bounds
+                cropRect.x = Math.max(0, Math.min(cropRect.x, imageCanvas.width - cropRect.width));
+                cropRect.y = Math.max(0, Math.min(cropRect.y, imageCanvas.height - cropRect.height));
+
+
+                startX = e.clientX;
+                startY = e.clientY;
+
+                drawCropOverlay();
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDraggingCrop = false;
+                isResizingHandle = null;
+            });
+
+            imageCanvas.addEventListener('mousedown', (e) => {
+                if (!isCropping || !currentImage) return;
+                e.preventDefault();
+
+                const canvasRect = imageCanvas.getBoundingClientRect();
+                const scaleX = imageCanvas.width / canvasRect.width;
+                const scaleY = imageCanvas.height / canvasRect.height;
+
+                startX = (e.clientX - canvasRect.left) * scaleX;
+                startY = (e.clientY - canvasRect.top) * scaleY;
+
+                // Start new crop rectangle from scratch
+                cropRect = { x: startX, y: startY, width: 0, height: 0 };
+                isDraggingCrop = true;
+                drawCropOverlay(); // Show initial zero-width/height overlay
+            });
+
+            imageCanvas.addEventListener('mousemove', (e) => {
+                if (!isCropping || !isDraggingCrop || !currentImage) return;
+                e.preventDefault();
+
+                const canvasRect = imageCanvas.getBoundingClientRect();
+                const scaleX = imageCanvas.width / canvasRect.width;
+                const scaleY = imageCanvas.height / canvasRect.height;
+
+                const currentX = (e.clientX - canvasRect.left) * scaleX;
+                const currentY = (e.clientY - canvasRect.top) * scaleY;
+
+                let newWidth = currentX - startX;
+                let newHeight = currentY - startY;
+
+                // Adjust x, y, width, height to always be positive
+                if (newWidth < 0) {
+                    cropRect.x = currentX;
+                    cropRect.width = Math.abs(newWidth);
+                } else {
+                    cropRect.x = startX;
+                    cropRect.width = newWidth;
+                }
+
+                if (newHeight < 0) {
+                    cropRect.y = currentY;
+                    cropRect.height = Math.abs(newHeight);
+                } else {
+                    cropRect.y = startY;
+                    cropRect.height = newHeight;
+                }
+
+                // Clamp to canvas boundaries
+                cropRect.x = Math.max(0, cropRect.x);
+                cropRect.y = Math.max(0, cropRect.y);
+                cropRect.width = Math.min(cropRect.width, imageCanvas.width - cropRect.x);
+                cropRect.height = Math.min(cropRect.height, imageCanvas.height - cropRect.y);
+
+                drawCropOverlay();
+            });
+
+            imageCanvas.addEventListener('mouseup', () => {
+                if (isCropping) {
+                    isDraggingCrop = false;
+                    // Ensure minimum crop size if user just clicked
+                    if (cropRect.width < 10 || cropRect.height < 10) {
+                        cropRect = { x: 0, y: 0, width: 0, height: 0 }; // Reset if too small
+                        drawCropOverlay();
+                    }
+                }
+            });
+
+
+            applyCropButton.addEventListener('click', () => {
+                if (!currentImage || cropRect.width === 0 || cropRect.height === 0) {
+                    showMessage('Please select a crop area first.', 'error');
+                    return;
+                }
+
+                // Create a temporary canvas for cropping
+                const tempCanvas = document.createElement('canvas');
+                const tempCtx = tempCanvas.getContext('2d');
+
+                tempCanvas.width = cropRect.width;
+                tempCanvas.height = cropRect.height;
+
+                // Draw the cropped portion of the current image onto the temp canvas
+                tempCtx.drawImage(
+                    currentImage,
+                    cropRect.x, cropRect.y, cropRect.width, cropRect.height, // Source rectangle
+                    0, 0, cropRect.width, cropRect.height // Destination rectangle
+                );
+
+                // Update currentImage with the cropped image
+                const croppedImg = new Image();
+                croppedImg.onload = () => {
+                    currentImage = croppedImg;
+                    drawImageOnCanvas(currentImage, currentImage.width, currentImage.height);
+                    updateFileSizeDisplay();
+                    showMessage('Image cropped successfully!', 'success');
+                    disableCropping(); // Disable cropping after applying
+                };
+                croppedImg.src = tempCanvas.toDataURL(); // Get data URL from temp canvas
+            });
+
+            // --- Download Functionality ---
+            downloadImageButton.addEventListener('click', () => {
+                if (!currentImage) {
+                    showMessage('No image to download. Please load and process an image first.', 'error');
+                    return;
+                }
+
+                // Check if FileSaver.js is available
+                if (typeof saveAs === 'undefined') {
+                    showMessage('FileSaver.js library not loaded. Cannot download image.', 'error');
+                    console.error("saveAs function is undefined. The FileSaver.min.js script might not have been fully embedded.");
+                    return;
+                }
+
+                imageCanvas.toBlob((blob) => {
+                    if (blob) {
+                        saveAs(blob, 'processed_image.png'); // Default to PNG for quality
+                        showMessage('Image downloaded successfully!', 'success');
+                    } else {
+                        showMessage('Failed to generate image for download.', 'error');
+                    }
+                }, 'image/png', 0.9); // Quality 0.9 for PNG
+            });
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }); // End of DOMContentLoaded
+    </script>
+</body>
+</html>
