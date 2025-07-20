@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultimate Soccer Ball Game</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('https://cdn.pixabay.com/photo/2020/03/22/06/57/game-background-4956017_1280.jpg') no-repeat center center;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  let cw = window.innerWidth;
+  let ch = window.innerHeight;
+  canvas.width = cw;
+  canvas.height = ch;
+
+  const ballImg = new Image();
+  ballImg.src = "https://static.vecteezy.com/system/resources/thumbnails/010/258/757/small/soccer-ball-3d-illustration-png.png";
+
+  let keys = {
+    ArrowLeft: false,
+    ArrowRight: false,
+    ArrowUp: false,
+    ArrowDown: false,
+    a: false,
+    d: false,
+    w: false,
+    s: false
+  };
+
+  let ball = {
+    x: cw / 2,
+    y: ch - 60,
+    radius: 40,
+    vx: 0,
+    vy: 0,
+    gravity: 0.6,
+    bounce: -0.8,
+    friction: 0.98,
+    rotation: 0,
+    rotationSpeed: 0,
+    speed: 0.7
+  };
+
+  // Resize to full screen on any window change
+  window.addEventListener('resize', () => {
+    cw = window.innerWidth;
+    ch = window.innerHeight;
+    canvas.width = cw;
+    canvas.height = ch;
+  });
+
+  // Keyboard controls
+  document.addEventListener("keydown", (e) => {
+    keys[e.key] = true;
+  });
+
+  document.addEventListener("keyup", (e) => {
+    keys[e.key] = false;
+  });
+
+  // Dragging support
+  let isDragging = false;
+  let dragOffsetX = 0;
+  let dragOffsetY = 0;
+  let prevMouse = { x: 0, y: 0 };
+
+  canvas.addEventListener("mousedown", (e) => {
+    const mx = e.clientX;
+    const my = e.clientY;
+    const dx = mx - ball.x;
+    const dy = my - ball.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist <= ball.radius) {
+      isDragging = true;
+      dragOffsetX = dx;
+      dragOffsetY = dy;
+      prevMouse = { x: mx, y: my };
+    }
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      const mx = e.clientX;
+      const my = e.clientY;
+      ball.vx = mx - prevMouse.x;
+      ball.vy = my - prevMouse.y;
+      ball.rotationSpeed = ball.vx * 0.5;
+      ball.x = mx - dragOffsetX;
+      ball.y = my - dragOffsetY;
+      prevMouse = { x: mx, y: my };
+    }
+  });
+
+  canvas.addEventListener("mouseup", () => isDragging = false);
+  canvas.addEventListener("mouseleave", () => isDragging = false);
+
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Keyboard movement
+    if (keys.ArrowLeft || keys.a) {
+      ball.vx -= ball.speed;
+      ball.rotationSpeed = -3;
+    }
+    if (keys.ArrowRight || keys.d) {
+      ball.vx += ball.speed;
+      ball.rotationSpeed = 3;
+    }
+    if (keys.ArrowUp || keys.w) {
+      ball.vy -= ball.speed * 2;
+    }
+    if (keys.ArrowDown || keys.s) {
+      ball.vy += ball.speed * 0.5;
+    }
+
+    if (!isDragging) {
+      // Apply gravity and movement
+      ball.vy += ball.gravity;
+      ball.x += ball.vx;
+      ball.y += ball.vy;
+
+      // Floor bounce
+      if (ball.y + ball.radius > ch) {
+        ball.y = ch - ball.radius;
+        ball.vy *= ball.bounce;
+        ball.rotationSpeed = ball.vx * 0.5;
+      }
+
+      // Ceiling bounce
+      if (ball.y - ball.radius < 0) {
+        ball.y = ball.radius;
+        ball.vy *= ball.bounce;
+        ball.rotationSpeed = ball.vx * 0.5;
+      }
+
+      // Side walls
+      if (ball.x - ball.radius < 0) {
+        ball.x = ball.radius;
+        ball.vx *= -1;
+        ball.rotationSpeed = ball.vx * 0.5;
+      }
+
+      if (ball.x + ball.radius > cw) {
+        ball.x = cw - ball.radius;
+        ball.vx *= -1;
+        ball.rotationSpeed = ball.vx * 0.5;
+      }
+
+      // Friction & rotation
+      ball.vx *= ball.friction;
+      ball.vy *= ball.friction;
+      ball.rotationSpeed *= 0.96;
+      ball.rotation += ball.rotationSpeed;
+    }
+
+    // Draw ball with rotation
+    ctx.save();
+    ctx.translate(ball.x, ball.y);
+    ctx.rotate(ball.rotation * Math.PI / 180);
+    ctx.drawImage(ballImg, -ball.radius, -ball.radius, ball.radius * 2, ball.radius * 2);
+    ctx.restore();
+
+    requestAnimationFrame(update);
+  }
+
+  ballImg.onload = update;
+</script>
+</body>
+</html>
