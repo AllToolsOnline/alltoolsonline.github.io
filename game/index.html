@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AllToolsOnline - Game Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      padding: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .game-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+
+    .game-card:hover {
+      transform: scale(1.03);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .game-card h3 {
+      margin: 0;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 AllToolsOnline Game Hub</h1>
+  <div class="game-grid" id="gameList"></div>
+
+  <script>
+    // Add game info here manually or fetch dynamically from API/Repo later
+    const games = [
+      {
+        name: "Bouncy Ball",
+        path: "games/bouncy-ball/",
+        logo: "games/bouncy-ball/logo.png"
+      },
+      {
+        name: "Pong",
+        path: "games/pong/",
+        logo: "games/pong/logo.png"
+      },
+      // Add more games here...
+    ];
+
+    const container = document.getElementById('gameList');
+
+    games.forEach(game => {
+      const card = document.createElement('div');
+      card.className = 'game-card';
+      card.innerHTML = `
+        <a href="${game.path}" target="_blank">
+          <img src="${game.logo}" alt="${game.name} Logo" />
+          <h3>${game.name}</h3>
+        </a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
